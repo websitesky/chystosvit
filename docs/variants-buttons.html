@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЧистоСвіт — відтінок кнопок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap" rel="stylesheet">
+<style>
+  :root { --pine:#0D0D0D; --display:'Unbounded',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--pine); font-family:var(--body); color:#fff; }
+
+  .bg { position:fixed; inset:0; z-index:0; overflow:hidden; }
+  .bg video { width:100%; height:100%; object-fit:cover; object-position:62% 42%; }
+  .bg::after {
+    content:''; position:absolute; inset:0;
+    background:
+      linear-gradient(90deg, rgba(13,13,13,.5) 0%, rgba(13,13,13,.45) 42%, rgba(13,13,13,.38) 70%, rgba(13,13,13,.25) 100%),
+      linear-gradient(180deg, rgba(13,13,13,.4) 0%, rgba(13,13,13,.2) 24%, rgba(13,13,13,.4) 60%, rgba(13,13,13,.7) 100%);
+  }
+
+  .wrap { position:relative; z-index:1; max-width:1020px; margin:0 auto; padding:52px clamp(20px,5vw,60px) 90px; }
+  h1 { font-family:var(--display); font-weight:700; font-size:clamp(1.25rem,2.3vw,1.8rem); margin:0 0 10px; }
+  h2 { font-family:var(--display); font-weight:600; font-size:1rem; margin:44px 0 16px; color:rgba(255,255,255,.85); }
+  .note { font-size:15px; line-height:1.55; color:rgba(255,255,255,.75); max-width:660px; margin:0 0 8px; text-shadow:0 1px 2px rgba(0,0,0,.5); }
+  .legend { font-size:13px; color:rgba(255,255,255,.55); margin:0 0 10px; }
+
+  /* зразки, зняті з Instagram */
+  .swatches { display:flex; flex-wrap:wrap; gap:12px; margin:18px 0 6px; }
+  .sw { border-radius:14px; padding:14px 16px 12px; min-width:150px; color:#0D0D0D; }
+  .sw b { display:block; font-family:var(--display); font-size:13px; }
+  .sw span { font-size:11.5px; opacity:.75; }
+
+  .row { border-top:1px solid rgba(255,255,255,.14); padding:24px 0; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+  .meta { flex:1 1 250px; min-width:230px; }
+  .meta b { display:block; font-size:15px; margin-bottom:5px; }
+  .meta code { font-size:12.5px; color:rgba(255,255,255,.62); }
+  .why { font-size:13px; line-height:1.45; color:rgba(255,255,255,.62); margin-top:8px; }
+
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    border:2px solid transparent; border-radius:999px; padding:18px 36px;
+    font-family:var(--body); font-weight:700; font-size:16px; line-height:1.1;
+    white-space:nowrap; cursor:pointer;
+  }
+
+  .score { font-family:var(--display); font-size:15px; font-weight:600; min-width:132px; }
+  .pass { color:#64E39B; } .fail { color:#FF6B6B; }
+  .score small { display:block; font-family:var(--body); font-weight:500; font-size:11.5px; color:rgba(255,255,255,.5); margin-top:3px; }
+
+  .a { background:linear-gradient(135deg,#FD8ACF 0%,#F96BC1 55%,#F04FB0 100%); color:#0D0D0D; }
+  .b { background:#F96BC1; color:#0D0D0D; }
+  .c { background:linear-gradient(135deg,#FD8ACF 0%,#F96BC1 55%,#F04FB0 100%); color:#fff; }
+  .d { background:linear-gradient(135deg,#FF2FAC 0%,#EC0190 52%,#C4017A 100%); color:#fff; }
+  .e { background:linear-gradient(135deg,#FA7FC6 0%,#F04FB0 55%,#E22E9C 100%); color:#0D0D0D; }
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <video autoplay muted loop playsinline poster="../assets/img/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="../assets/video/hero.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="wrap">
+
+  <h1>Відтінок кнопки</h1>
+  <p class="note">
+    Кольори нижче зняті пікселями з семи скріншотів Instagram-профілю.
+    Тон бренду — 324°, той самий, що в коді. Відрізняється лише світлість:
+    у бренді 70%, у коді стояло 46%.
+  </p>
+
+  <div class="swatches">
+    <div class="sw" style="background:#F96BC1"><b>#F96BC1</b><span>H 324 · S 92% · L 70% · найчастіший</span></div>
+    <div class="sw" style="background:#FD5EC1"><b>#FD5EC1</b><span>H 323 · S 98% · L 68%</span></div>
+    <div class="sw" style="background:#F43D80"><b>#F43D80</b><span>H 338 · S 89% · L 60%</span></div>
+    <div class="sw" style="background:#EC0190; color:#fff"><b>#EC0190</b><span>H 324 · S 99% · L 46% · у коді</span></div>
+  </div>
+
+  <h2>Що це означає для кнопки</h2>
+  <p class="note">
+    Світлий рожевий не тримає білий підпис — він стає нечитабельним.
+    Зате чорний підпис на ньому читається відмінно, і це саме те поєднання,
+    яке бренд уже використовує в дописах.
+  </p>
+  <p class="legend">Норма для підпису 16&nbsp;px жирного — 4.5:1.</p>
+
+  <div class="row">
+    <div class="meta">
+      <b>A · брендовий світлий, чорний підпис</b>
+      <code>#FD8ACF → #F96BC1 → #F04FB0</code>
+      <p class="why">Відтінок з Instagram, підпис майже чорний. Найближче до того, що на футболках.</p>
+    </div>
+    <button class="btn a">Замовити прибирання</button>
+    <div class="score" data-fg="#0D0D0D" data-bg="#F96BC1"></div>
+  </div>
+
+  <div class="row">
+    <div class="meta">
+      <b>B · те саме без градієнта</b>
+      <code>#F96BC1</code>
+      <p class="why">Плоска заливка рівно тим кольором, що знято з лого.</p>
+    </div>
+    <button class="btn b">Замовити прибирання</button>
+    <div class="score" data-fg="#0D0D0D" data-bg="#F96BC1"></div>
+  </div>
+
+  <div class="row">
+    <div class="meta">
+      <b>E · трохи глибше, чорний підпис</b>
+      <code>#FA7FC6 → #F04FB0 → #E22E9C</code>
+      <p class="why">Компроміс: світліше за поточне, але насиченіше за A. Помітніше на світлому відео.</p>
+    </div>
+    <button class="btn e">Замовити прибирання</button>
+    <div class="score" data-fg="#0D0D0D" data-bg="#F04FB0"></div>
+  </div>
+
+  <div class="row">
+    <div class="meta">
+      <b>C · світлий, але білий підпис</b>
+      <code>#F96BC1 + білий</code>
+      <p class="why">Так робити не можна — показано, щоб було видно різницю.</p>
+    </div>
+    <button class="btn c">Замовити прибирання</button>
+    <div class="score" data-fg="#FFFFFF" data-bg="#F96BC1"></div>
+  </div>
+
+  <div class="row">
+    <div class="meta">
+      <b>D · як зараз на сайті</b>
+      <code>#EC0190 + білий</code>
+      <p class="why">Темніше за бренд і підпис не дотягує до норми.</p>
+    </div>
+    <button class="btn d">Замовити прибирання</button>
+    <div class="score" data-fg="#FFFFFF" data-bg="#EC0190"></div>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    function lin(c){ c/=255; return c<=0.04045 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4); }
+    function lum(hex){
+      var r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+      return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);
+    }
+    document.querySelectorAll('.score').forEach(function(el){
+      var L1=lum(el.getAttribute('data-fg')), L2=lum(el.getAttribute('data-bg'));
+      var r=(Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05);
+      r=Math.round(r*100)/100;
+      var ok=r>=4.5;
+      el.className='score '+(ok?'pass':'fail');
+      el.innerHTML=r.toFixed(2)+':1 '+(ok?'✓':'✗')+'<small>'+(ok?'проходить':'не проходить')+' 4.5:1</small>';
+    });
+  })();
+</script>
+
+</body>
+</html>

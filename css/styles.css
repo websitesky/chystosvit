@@ -13,6 +13,9 @@
      Фірмовий #EC0190 на ледь затемненому кадрі дає 2.26:1 і не проходить
      навіть поріг великого тексту (3:1). Цей відтінок дає 4.44:1. */
   --cs-pink-soft: #FF8ACB;
+  /* Кнопкова заливка. Знято з Instagram: тон бренду 324°, світлість ~70%,
+     а не 46% як у --cs-pink. Підпис на ній ЧОРНИЙ — білий дає лише 2.66:1. */
+  --cs-pink-btn: #F04FB0;
   --cs-raspberry: #A8125A;
   --cs-rose: #E74376;
   --cs-blush: #F8E4F1;
@@ -139,14 +142,14 @@
 .cs-btn:active { transform: translateY(0) scale(0.985); }
 
 .cs-btn--primary {
-  background: linear-gradient(135deg, #FF2FAC 0%, #EC0190 52%, #C4017A 100%);
-  color: #fff;
-  box-shadow: 0 14px 34px -14px rgba(236, 1, 144, 0.85);
+  background: linear-gradient(135deg, #FA7FC6 0%, #F04FB0 55%, #E22E9C 100%);
+  color: var(--cs-pine); /* чорний підпис: на світлому рожевому білий не читається */
+  box-shadow: 0 14px 34px -14px rgba(240, 79, 176, 0.85);
   animation: cs-glow 3.2s ease-in-out infinite;
 }
 
 .cs-btn--primary:hover {
-  background: linear-gradient(135deg, #FF56BE 0%, #FF17A3 52%, #D40185 100%);
+  background: linear-gradient(135deg, #FF97D3 0%, #F868BE 55%, #EE45A9 100%);
   transform: translateY(-2px);
 }
 
@@ -171,8 +174,8 @@
 
 /* М'яке дихання тіні — притягує око до основної дії */
 @keyframes cs-glow {
-  0%, 100% { box-shadow: 0 14px 34px -14px rgba(236, 1, 144, 0.85); }
-  50%      { box-shadow: 0 16px 42px -12px rgba(236, 1, 144, 1); }
+  0%, 100% { box-shadow: 0 14px 34px -14px rgba(240, 79, 176, 0.85); }
+  50%      { box-shadow: 0 16px 42px -12px rgba(240, 79, 176, 1); }
 }
 
 .cs-btn--ghost {
@@ -399,13 +402,14 @@
   .cs-header__phone {
     padding: 13px 20px; /* тап-таргет ≥44px */
     border-radius: 999px;
-    background: var(--cs-pink);
+    background: linear-gradient(135deg, #FA7FC6 0%, #F04FB0 55%, #E22E9C 100%);
+    color: var(--cs-pine); /* як на кнопках: білий на світлому рожевому дає 2.66:1 */
     font-size: 15px;
     text-shadow: none;
-    box-shadow: 0 12px 28px -14px rgba(236, 1, 144, 0.9);
+    box-shadow: 0 12px 28px -14px rgba(240, 79, 176, 0.9);
   }
 
-  .cs-header__phone:hover { color: #fff; }
+  .cs-header__phone:hover { color: var(--cs-pine); }
 
   .cs-hero__scrim {
     /* На мобільному кадр обрізається до вертикального і потрапляє на світлішу
