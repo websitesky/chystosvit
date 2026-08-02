@@ -34,7 +34,7 @@
   --cs-shadow: 0 20px 50px -20px rgba(10, 10, 10, 0.35);
 
   /* Типографіка */
-  --cs-font-display: 'Unbounded', system-ui, sans-serif;
+  --cs-font-display: 'Onest', system-ui, sans-serif;
   --cs-font-body: 'Manrope', system-ui, sans-serif;
   --cs-font-script: 'Marck Script', cursive;
 
@@ -305,9 +305,10 @@
 .cs-hero__title {
   font-family: var(--cs-font-display);
   font-weight: 700;
-  /* Кегль підібраний на РЕАЛЬНИХ шрифтах (Unbounded помітно ширший за
-     системний fallback): 3 рядки і весь екран без прокрутки на 720px висоти. */
-  font-size: clamp(1.7rem, 3.45vw, 3.4rem);
+  /* Кегль підібраний на реальних шрифтах. Onest на ~23% вужчий за Unbounded,
+     тому за той самий простір поміщається помітно більший заголовок —
+     стеля для 3 рядків піднялась з 45px до 60px. */
+  font-size: clamp(1.7rem, 4.35vw, 4rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
   text-wrap: balance;
@@ -469,7 +470,7 @@
   .cs-hero__body { padding-block: 92px 28px; }
 
   .cs-hero__title {
-    font-size: clamp(1.25rem, 2.9vw, 2rem);
+    font-size: clamp(1.4rem, 3.4vw, 2.25rem);
     margin-bottom: 12px;
   }
 

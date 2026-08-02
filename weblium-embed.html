@@ -15,7 +15,7 @@
 -->
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap');
 
 .cs-scope {
   --cs-pine: #0D0D0D;
@@ -37,7 +37,7 @@
   --cs-radius: 22px;
   --cs-radius-sm: 14px;
   --cs-shadow: 0 20px 50px -20px rgba(10, 10, 10, 0.35);
-  --cs-font-display: 'Unbounded', system-ui, sans-serif;
+  --cs-font-display: 'Onest', system-ui, sans-serif;
   --cs-font-body: 'Manrope', system-ui, sans-serif;
   --cs-font-script: 'Marck Script', cursive;
   --cs-pad-x: clamp(20px, 5vw, 72px);
@@ -260,8 +260,8 @@
 .cs-hero__title {
   font-family: var(--cs-font-display);
   font-weight: 700;
-  /* Кегль підібраний на реальних шрифтах — Unbounded помітно ширший за fallback */
-  font-size: clamp(1.7rem, 3.45vw, 3.4rem);
+  /* Onest на ~23% вужчий за Unbounded — за той самий простір більший заголовок */
+  font-size: clamp(1.7rem, 4.35vw, 4rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
   text-wrap: balance;
@@ -381,7 +381,7 @@
    а тут блок вилазив за межі екрана — стискаємо вертикальний ритм. */
 @media (max-height: 700px) {
   .cs-hero__body { padding-block: 92px 28px; }
-  .cs-hero__title { font-size: clamp(1.25rem, 2.9vw, 2rem); margin-bottom: 12px; }
+  .cs-hero__title { font-size: clamp(1.4rem, 3.4vw, 2.25rem); margin-bottom: 12px; }
   /* не нижче 24px: рожевий проходить поріг WCAG лише як великий текст */
   .cs-hero__claim { font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 16px; }
   .cs-bullets { gap: 9px clamp(20px, 3vw, 40px); margin-bottom: 18px; }

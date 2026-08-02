@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЧистоСвіт — шрифт заголовка</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800&family=Montserrat:wght@400;700;800&family=Rubik:wght@400;700;800&family=Golos+Text:wght@400;700;800&family=Onest:wght@400;700;800&family=Manrope:wght@400;700;800&family=Jost:wght@400;700&family=Commissioner:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --pine:#0D0D0D; --pink:#FF8ACB; --body:'Manrope',system-ui,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--pine); color:#fff; font-family:var(--body); }
+
+  .wrap { max-width:1180px; margin:0 auto; padding:48px clamp(20px,5vw,60px) 90px; }
+  h1.page { font-family:'Onest',sans-serif; font-weight:800; font-size:clamp(1.3rem,2.4vw,1.9rem); margin:0 0 10px; }
+  .note { font-size:15px; line-height:1.55; color:rgba(255,255,255,.72); max-width:680px; margin:0 0 6px; }
+  .legend { font-size:13px; color:rgba(255,255,255,.5); margin:0 0 36px; }
+
+  .card { border-top:1px solid rgba(255,255,255,.14); padding:28px 0 30px; }
+
+  .head {
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:16px;
+  }
+  .name { font-family:'Onest',sans-serif; font-weight:700; font-size:17px; }
+  .badge {
+    font-size:12px; font-weight:700; letter-spacing:.03em;
+    padding:4px 10px; border-radius:999px; background:rgba(255,255,255,.12);
+    color:rgba(255,255,255,.8);
+  }
+  .badge.win { background:var(--pink); color:#0D0D0D; }
+  .stats { font-size:12.5px; color:rgba(255,255,255,.6); margin-left:auto; }
+
+  .sample {
+    font-weight:800; line-height:1.12; letter-spacing:-.02em;
+    font-size:44px; margin:0 0 10px; max-width:768px;
+  }
+  .sample.big { color:var(--pink); }
+  .cap { font-size:12px; color:rgba(255,255,255,.45); margin:0 0 18px; }
+
+  .why { font-size:13.5px; line-height:1.5; color:rgba(255,255,255,.66); max-width:720px; margin:14px 0 0; }
+
+  .f-unbounded  { font-family:'Unbounded',sans-serif; }
+  .f-onest      { font-family:'Onest',sans-serif; }
+  .f-rubik      { font-family:'Rubik',sans-serif; }
+  .f-manrope    { font-family:'Manrope',sans-serif; }
+  .f-golos      { font-family:'Golos Text',sans-serif; }
+  .f-montserrat { font-family:'Montserrat',sans-serif; }
+  .f-jost       { font-family:'Jost',sans-serif; }
+  .f-commissioner { font-family:'Commissioner',sans-serif; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1 class="page">Шрифт заголовка: чим замінити Unbounded</h1>
+  <p class="note">
+    Однаковий текст, однаковий кегль 44&nbsp;px, однакова ширина колонки 768&nbsp;px —
+    так само, як на першому екрані при вікні 1280.
+    Рожевий рядок показує, наскільки більшим можна зробити заголовок цим шрифтом,
+    не додавши четвертого рядка.
+  </p>
+  <p class="legend">Ширина міряна по нашому заголовку. У всіх кандидатів є кирилиця.</p>
+
+  <!-- Unbounded -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Unbounded</span>
+      <span class="badge">зараз</span>
+      <span class="stats">ширина 100% · макс. кегль для 3 рядків: 45 px · на 360 px дає 4 рядки</span>
+    </div>
+    <p class="sample f-unbounded">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Геометричний, широкий, помітний. Саме ширина і з'їдає місце: на малих екранах заголовок розсипається.</p>
+  </div>
+
+  <!-- Onest -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Onest</span>
+      <span class="badge win">раджу</span>
+      <span class="stats">−22.9% · макс. кегль 60 px (+33%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-onest">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="sample f-onest big" style="font-size:60px">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">60 px — той самий простір, більший заголовок</p>
+    <p class="why">Найближчий за характером: така сама сучасна геометрія, круглі форми, без ретро-присмаку. Кирилиця опрацьована ретельно, українські і/ї/є/ґ виглядають рідними, а не домальованими.</p>
+  </div>
+
+  <!-- Rubik -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Rubik</span>
+      <span class="stats">−20.3% · макс. кегль 58 px (+29%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-rubik">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Геометричний з ледь заокругленими кутами — звучить тепліше й простіше. Добре лягає на невимушений голос бренду («не боїмося брудних квартир»).</p>
+  </div>
+
+  <!-- Manrope -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Manrope</span>
+      <span class="stats">−24.1% · макс. кегль 60 px (+33%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-manrope">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Той самий шрифт, що вже стоїть у тексті. Взяти його і в заголовок — на сайті лишиться два шрифти замість трьох. Найбезпечніше рішення, але заголовок перестає відрізнятись від решти на вигляд.</p>
+  </div>
+
+  <!-- Golos Text -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Golos Text</span>
+      <span class="stats">−21.9% · макс. кегль 59 px (+31%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-golos">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Нейтральний гротеск, сильна кирилиця. Спокійніший за Unbounded, майже без характеру — це і плюс, і мінус.</p>
+  </div>
+
+  <!-- Montserrat -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Montserrat</span>
+      <span class="stats">−15.3% · макс. кегль 54 px (+20%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-montserrat">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Той, про який ти питала. Кирилиця є, працює. Але вузьким його не назвеш — виграш найменший із усіх, лише 15%. І він настільки поширений, що майже не додає впізнаваності.</p>
+  </div>
+
+  <!-- Jost -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Jost</span>
+      <span class="stats">−24.6% · макс. кегль 62 px (+38%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-jost">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Найвужчий і найгеометричніший, у дусі Futura. Виграш найбільший, але характер помітно ретро — подивись саме на кирилицю тут уважно, вона стриманіша за латиницю.</p>
+  </div>
+
+  <!-- Commissioner -->
+  <div class="card">
+    <div class="head">
+      <span class="name">Commissioner</span>
+      <span class="stats">−26.6% · макс. кегль 62 px (+38%) · на 360 px 3 рядки</span>
+    </div>
+    <p class="sample f-commissioner">Клінінгові послуги в Івано-Франківську для квартир, будинків та бізнесу</p>
+    <p class="cap">44 px</p>
+    <p class="why">Найвужчий за замірами. Дуже нейтральний, майже канцелярський — для бренду з живою інтонацією це радше мінус.</p>
+  </div>
+
+</div>
+</body>
+</html>
