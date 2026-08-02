@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.claude/settings.local.json
+
+# дублікат assets/video/hero.mp4, лежить у корені локально
+video_1 ekran.mp4

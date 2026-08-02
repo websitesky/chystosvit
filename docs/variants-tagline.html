@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЧистоСвіт — варіанти слогана</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #EC0190;
+    --pine: #0D0D0D;
+    --display: 'Unbounded', system-ui, sans-serif;
+    --body: 'Manrope', system-ui, sans-serif;
+    --script: 'Marck Script', cursive;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--pine);
+    font-family: var(--body);
+    color: #fff;
+  }
+
+  /* Той самий фон, що на першому екрані */
+  .bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
+  .bg video { width: 100%; height: 100%; object-fit: cover; object-position: 62% 42%; }
+  .bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg,
+        rgba(13,13,13,.88) 0%, rgba(13,13,13,.82) 36%,
+        rgba(13,13,13,.62) 64%, rgba(13,13,13,.40) 100%),
+      linear-gradient(180deg,
+        rgba(13,13,13,.6) 0%, rgba(13,13,13,.3) 30%,
+        rgba(13,13,13,.6) 70%, rgba(13,13,13,.9) 100%);
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px clamp(20px, 5vw, 64px) 96px;
+  }
+
+  .page-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    margin: 0 0 8px;
+  }
+
+  .page-note {
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,.66);
+    max-width: 620px;
+    margin: 0 0 48px;
+  }
+
+  .variant {
+    border-top: 1px solid rgba(255,255,255,.14);
+    padding: 34px 0 38px;
+  }
+
+  .variant__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 22px;
+  }
+
+  .variant__label b {
+    display: grid;
+    place-items: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--pink);
+    color: #fff;
+    font-size: 12px;
+  }
+
+  /* Контекст: шматок H1 зверху і акцентний рядок знизу — як на екрані */
+  .ctx-h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    margin: 0 0 20px;
+    color: rgba(255,255,255,.92);
+  }
+
+  .ctx-claim {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 1.9vw, 1.6rem);
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    color: var(--pink);
+    margin: 18px 0 0;
+  }
+
+  .variant__why {
+    margin: 16px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.6);
+    max-width: 620px;
+  }
+
+  /* ---------- самі варіанти ---------- */
+
+  /* 0 — поточний */
+  .t0 {
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.72);
+    margin: 0;
+  }
+
+  /* 1 — Manrope, звичайний регістр */
+  .t1 {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0;
+    color: rgba(255,255,255,.78);
+    margin: 0;
+  }
+
+  /* 2 — роздільники-крапки, рожевий приглушений */
+  .t2 {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: .02em;
+    color: rgba(255,255,255,.82);
+    margin: 0;
+  }
+  .t2 i { font-style: normal; color: var(--pink); padding: 0 10px; }
+
+  /* 3 — Unbounded, та сама сімʼя, що заголовок */
+  .t3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: .01em;
+    color: rgba(255,255,255,.75);
+    margin: 0;
+  }
+
+  /* 4 — Marck Script, фірмовий рукописний */
+  .t4 {
+    font-family: var(--script);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0;
+  }
+
+  /* 5 — без слогана */
+  .t5-none {
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,.38);
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <video autoplay muted loop playsinline poster="../assets/img/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="../assets/video/hero.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="wrap">
+
+  <h1 class="page-title">Варіанти рядка «Швидко. Надійно. Охайно»</h1>
+  <p class="page-note">
+    Фон — те саме відео і те саме затемнення, що на першому екрані, тож видно,
+    як кожен варіант поводиться на реальній картинці, а не на плоскому чорному.
+    Зверху й знизу — сусідні рядки для контексту.
+  </p>
+
+  <!-- 0 -->
+  <section class="variant">
+    <p class="variant__label"><b>0</b> було раніше</p>
+    <p class="ctx-h1">Клінінгові послуги в Івано-Франківську…</p>
+    <p class="t0">Швидко. Надійно. Охайно</p>
+    <p class="ctx-claim">Приберемо так, щоб ви сказали ВАУ</p>
+    <p class="variant__why">Manrope 700, капс, розріджений. Капс на кирилиці читається важче й додає «корпоративності», якої в бренді немає.</p>
+  </section>
+
+  <!-- 1 -->
+  <section class="variant">
+    <p class="variant__label"><b>1</b> Manrope, звичайний регістр</p>
+    <p class="ctx-h1">Клінінгові послуги в Івано-Франківську…</p>
+    <p class="t1">Швидко. Надійно. Охайно</p>
+    <p class="ctx-claim">Приберемо так, щоб ви сказали ВАУ</p>
+    <p class="variant__why">Найтихіший варіант. Не сперечається ні з заголовком, ні з рожевим рядком — просто підпис.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="variant">
+    <p class="variant__label"><b>2</b> роздільники-крапки, рожевий акцент</p>
+    <p class="ctx-h1">Клінінгові послуги в Івано-Франківську…</p>
+    <p class="t2">Швидко<i>•</i>Надійно<i>•</i>Охайно</p>
+    <p class="ctx-claim">Приберемо так, щоб ви сказали ВАУ</p>
+    <p class="variant__why">Три слова читаються як перелік переваг, а не як обірване речення. Рожевий тримається дозовано — тільки в крапках.</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="variant">
+    <p class="variant__label"><b>3</b> Unbounded, дрібний</p>
+    <p class="ctx-h1">Клінінгові послуги в Івано-Франківську…</p>
+    <p class="t3">Швидко. Надійно. Охайно</p>
+    <p class="ctx-claim">Приберемо так, щоб ви сказали ВАУ</p>
+    <p class="variant__why">Одна сімʼя із заголовком — найбільш «зібрано» типографічно. Unbounded широкий, тому кегль тримаємо малим.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="variant">
+    <p class="variant__label"><b>4</b> Marck Script — фірмовий рукописний · ОБРАНО, ЗАРАЗ НА САЙТІ</p>
+    <p class="ctx-h1">Клінінгові послуги в Івано-Франківську…</p>
+    <p class="t4">Швидко. Надійно. Охайно</p>
+    <p class="ctx-claim">Приберемо так, щоб ви сказали ВАУ</p>
+    <p class="variant__why">Той самий шрифт, що в лого. Дає живу, не корпоративну інтонацію — рівно ту, що в Instagram. Дизайн-система дозволяє його дозовано, тут це друге і останнє місце на екрані.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="variant">
+    <p class="variant__label"><b>5</b> без слогана</p>
+    <p class="ctx-h1">Клінінгові послуги в Івано-Франківську…</p>
+    <p class="t5-none">(рядок прибрано)</p>
+    <p class="ctx-claim">Приберемо так, щоб ви сказали ВАУ</p>
+    <p class="variant__why">Три абстрактних слова не несуть факту. Прибрати — і рожевий рядок б'є сильніше, бо нічого не стоїть між ним і заголовком.</p>
+  </section>
+
+</div>
+
+</body>
+</html>
