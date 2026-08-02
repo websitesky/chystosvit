@@ -430,6 +430,67 @@
 }
 
 /* --------------------------------------------------------------------------
+   Низькі екрани
+
+   Усе вище реагує на ШИРИНУ. Але екран може бути низьким при будь-якій
+   ширині: старий телефон 360×640, будь-який телефон у ландшафті, вікно
+   браузера на пів-висоти. Там блок вилазив за межі екрана і кнопки
+   опинялись за згином. Тому окремо стискаємо вертикальний ритм.
+   -------------------------------------------------------------------------- */
+
+@media (max-height: 700px) {
+  .cs-hero__body { padding-block: 92px 28px; }
+
+  .cs-hero__title {
+    font-size: clamp(1.25rem, 2.9vw, 2rem);
+    margin-bottom: 12px;
+  }
+
+  /* Не опускаємо нижче 24px: рожевий на відео дає 3.87:1 і проходить
+     поріг WCAG лише як великий текст. Для регулярного накреслення
+     «великий» починається з 24px — нижче вимога стрибає до 4.5:1. */
+  .cs-hero__claim {
+    font-size: clamp(24px, 2.4vw, 30px);
+    margin-bottom: 16px;
+  }
+
+  .cs-bullets {
+    gap: 9px clamp(20px, 3vw, 40px);
+    margin-bottom: 18px;
+  }
+
+  .cs-bullets li { font-size: 13px; }
+  .cs-bullets svg { width: 18px; height: 18px; }
+
+  .cs-hero__actions .cs-btn { padding: 13px 24px; font-size: 15px; }
+
+  .cs-videobtn { width: 42px; height: 42px; }
+}
+
+/* Ландшафт телефона: широко, але дуже низько. Ширина тут потрапляє під
+   мобільні правила, хоча місця по горизонталі вистачає — повертаємо
+   буліти у дві колонки, а кнопки в рядок. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cs-hero__body { padding-block: 74px 18px; }
+
+  .cs-hero__title { font-size: clamp(1.15rem, 2.4vw, 1.6rem); margin-bottom: 8px; }
+  .cs-hero__claim { font-size: clamp(24px, 2.4vw, 28px); margin-bottom: 12px; }
+
+  .cs-bullets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 28px;
+    margin-bottom: 14px;
+  }
+
+  .cs-bullets li { font-size: 12.5px; }
+
+  .cs-hero__actions { flex-direction: row; flex-wrap: nowrap; }
+  .cs-hero__actions .cs-btn { width: auto; padding: 11px 20px; font-size: 14px; }
+
+  .cs-videobtn { width: 38px; height: 38px; bottom: 12px; }
+}
+
+/* --------------------------------------------------------------------------
    Доступність
    -------------------------------------------------------------------------- */
 
