@@ -139,10 +139,13 @@
               border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
 }
 
-/* Текст над анімованими шарами */
+/* Текст над анімованими шарами.
+   Тінь скидаємо: кнопка має власну заливку, підпис і так контрастний,
+   а успадкована з .cs-hero__copy тінь бруднила його. */
 .cs-btn > span {
   position: relative;
   z-index: 2;
+  text-shadow: none;
 }
 
 .cs-btn:active { transform: translateY(0) scale(0.985); }
